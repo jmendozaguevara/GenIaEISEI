@@ -1,0 +1,4 @@
+api_key_openAI = 'sk-lH6vghd_b6jja_s8oo8L-xcitF11W-LaFrKAw_FEvzT3BlbkFJ1hiBcja9w1ePi2KkSGUhLaryWzGpDCcfZ_t1HGpcAA'
+api_key_langChain = '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'
+api_key_tability = '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'
+api_key_fireworks = 'fw_3ZMgU6Ly82AcDpvmnE1yeywn'

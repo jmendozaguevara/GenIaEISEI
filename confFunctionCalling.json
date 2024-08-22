@@ -1,0 +1,83 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "query_empresa",
+            "description": "Query the company ID based on its name and return a type of report, either weekly or daily, as requested by the user.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "description": "The JSON data to query",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "query": {
+                        "type": "object",
+                        "description": "The query parameters",
+                        "properties": {
+                            "NombreEmpresa": {"type": "string"},
+                            "TipoReporte": {"type": "string"}
+                        }
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_obtenCliente",
+            "description": "Obten el cliente basado en el nombre proporcionado por el usuario",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "description": "The JSON data to query",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "query": {
+                        "type": "object",
+                        "description": "The query parameters",
+                        "properties": {
+                            "NombreCliente": {"type": "string"}
+                        }
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "query_obtenClientes",
+            "description": "Obten todos los clientes",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "description": "The JSON data to query",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "query": {
+                        "type": "object",
+                        "description": "The query parameters",
+                        "properties": {
+                        }
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    }
+]

@@ -1,0 +1,7 @@
+<p *ngIf="newdata">{{ newdata.title}}</p>
+<p *ngIf="newdata">{{ newdata.message}}</p>
+
+<input type="text" [(ngModel)]="menssage" placeholder="Mensaje" style="width: 600px;">
+<button (click)="postMessage()">Enviar</button>
+
+<h5>{{responseMessage}}</h5>
