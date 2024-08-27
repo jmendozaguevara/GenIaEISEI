@@ -1,14 +1,5 @@
 from utils import conexionBD
 import json
-#ejecutar store sin parametros
-#        storeProcedure = "exec " + sp + " "
-#result = conexionBD.execute_sql_storeProcedure("exec F_ObtenEmpresas", "");
-#print(result)
-
-#ejecutar store con parametros
-#params = (1)
-#result = conexionBD.execute_sql_storeProcedure("exec F_ObtenEmpresasPorId @pIdEmpresa = ?", params);
-#print(result)
 
 def query_empresa(query):
         if not query:
