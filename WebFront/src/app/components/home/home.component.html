@@ -1,7 +1,35 @@
-<p *ngIf="newdata">{{ newdata.title}}</p>
-<p *ngIf="newdata">{{ newdata.message}}</p>
+<div class="m-3">
+    <h3 *ngIf="newdata" class="font-weight-bold">{{ newdata.title}}</h3>
+    <h4 *ngIf="newdata" class="font-weight-bold">- {{ newdata.message}}</h4>
+</div>
+<div class="m-3">
+    <p class="font-weight-bold">- Ejemplo usar functionCallings con OpenAi</p>
+    <form (ngSubmit)="postMessage()">
+        <div class="input-group">
+            <input class="form-control" type="text" [(ngModel)]="mensaje" placeholder="Mensaje" name="menssage">
+            <button type="submit" class="btn btn-primary">Enviar</button>
 
-<input type="text" [(ngModel)]="menssage" placeholder="Mensaje" style="width: 600px;">
-<button (click)="postMessage()">Enviar</button>
+        </div>
+    </form>
+    <div class="row justify-content-center">
+        <div *ngIf="isCargandoPostMessage" class="row m-3 spinner-border text-primary" role="status">
+        </div>
+    </div>
+    <small class="preLineClass">{{responseMensaje}}</small>
+</div>
+<div class="m-3">
+    <p class="font-weight-bold">- Ejemplo usar agente llm con llama3</p>
+    <form (ngSubmit)="postAgenteRag()">
+        <div class="input-group">
+            <input class="form-control" type="text" [(ngModel)]="mensajeRag" placeholder="Mensaje" name="menssageRag">
+            <button type="submit" class="btn btn-primary">Enviar</button>
 
-<h5>{{responseMessage}}</h5>
+        </div>
+    </form>
+    <div class="row justify-content-center">
+        <div *ngIf="isCargandoPostAgenteRag" class="row m-3 spinner-border text-primary" role="status">
+        </div>
+    </div>
+
+    <small class="preLineClass">{{responseMensajeRag}}</small>
+</div>

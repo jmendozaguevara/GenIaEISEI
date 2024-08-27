@@ -9,8 +9,14 @@ import { FlaskService } from 'src/app/services/flask.service';
 })
 export class HomeComponent implements OnInit {
   newdata: any;
-  responseMessage: any;
-  menssage: any;
+  responseMensaje: any;
+  mensaje: any;
+  mensajeRag: any;
+  responseMensajeRag: any;
+
+  isCargandoPostMessage: boolean = false;
+  isCargandoPostAgenteRag: boolean = false;
+
 
   constructor(private _flaskService: FlaskService) { }
 
@@ -31,14 +37,35 @@ export class HomeComponent implements OnInit {
 
   postMessage() {
     //this.menssage = 'Dame la fecha de creacion de EISEI'
-    if(this.menssage){
-      this._flaskService.postMessage(this.menssage).subscribe({
+    if (this.mensaje) {
+      this.isCargandoPostMessage = true;
+      console.log("🚀 ~ HomeComponent ~ postMessage ~ this.menssage:", this.mensaje)
+      this._flaskService.postMessage(this.mensaje).subscribe({
         next: (res) => {
-          this.responseMessage = res;
+          this.responseMensaje = res;
+          this.isCargandoPostMessage = false;
+          console.log("🚀 ~ HomeComponent ~ this._flaskService.postMessage ~ res:", res)
+        },
+        error: (error: HttpErrorResponse) => {
+          console.log(error);
+          this.isCargandoPostMessage = false;
+        }
+      })
+    }
+  }
+
+  postAgenteRag() {
+    if (this.mensajeRag) {
+      this.isCargandoPostAgenteRag = true;
+      this._flaskService.postAgenteRag(this.mensajeRag).subscribe({
+        next: (res: any) => {
+          this.responseMensajeRag = res.response;
+          this.isCargandoPostAgenteRag = false;
           console.log("🚀 ~ HomeComponent ~ this._flaskService.postMessage ~ res:", res)
         },
         error: (error: HttpErrorResponse) => {
           console.log(error)
+          this.isCargandoPostAgenteRag = false;
         }
       })
     }
