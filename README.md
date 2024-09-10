@@ -4,3 +4,4 @@ O sino ejecutar app.py y ejecutar Webfront(accesar a la carpeta en el terminal, 
 Actividades:
 - Function Calling
 - Agente_RAG_con_ambiente_local
+- Actividad-gradio.py(esta por separado porque se usa gradio)
